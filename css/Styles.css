@@ -1,0 +1,381 @@
+/*--------------Phone------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: rgb(242, 242, 242);
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(242, 242, 242);
+}
+
+.logo-background {
+    width: 100%;
+    font-size: 3rem;
+    color: #333;
+    text-align: center;
+    display: block;
+    align-items: center;
+
+}
+
+
+/*--------------------------------------Social-icons-----------------------------------*/
+
+.social-icons {
+    position: absolute;
+    top: 20px;
+    right: 5px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+}
+
+/*----------------------------------content-----------------------------------------*/
+
+.calendario {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.evento {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: #005bb5;
+}
+
+
+
+/*---------------------------------bio-entrepreneur----------------------------------------*/
+
+.category-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+
+
+}
+
+.card {
+    border: 2px solid #333;
+    padding: 20px;
+    text-align: center;
+}
+
+
+
+.bio-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.bio-container img {
+    width: 200px;
+    height: auto;
+    border-radius: 10%;
+}
+
+.text-busines {
+    text-align: left;
+} 
+
+/*---------------------Tablets----------------------------*/
+
+@media (min-width: 768px) { 
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background-color: rgb(242, 242, 242);
+    }
+    
+    .container {
+        position: relative;
+        width: 70%;
+        height: 70%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(242, 242, 242);
+    }
+    
+    .logo-background {
+        width: 100%;
+        font-size: 3rem;
+        color: #333;
+        text-align: center;
+        display: block;
+        align-items: center;
+    
+    }
+    
+    
+    /*--------------------------------------Social-icons-----------------------------------*/
+    
+    .social-icons {
+        position:absolute;
+        top: 20px;
+        right: 20px;
+    }
+    
+    .social-icons a {
+        margin:  10px;
+        display: inline-block;
+    }
+    
+    .social-icons img {
+        width: 30px;
+        height: 30px;
+    }
+    
+    /*----------------------------------content------------------------------------------*/
+    
+    .calendario {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .evento {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    button {
+        padding: 10px 20px;
+        background-color: #0073e6;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+    }
+    
+    button:hover {
+        background-color: #005bb5;
+    }
+    
+    
+    
+    /*-------------------------------bio entrepreneur------------------------------------*/
+    
+    .category-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+        padding: 20px;
+    
+    
+    }
+    
+    .card {
+        border: 2px solid #333;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    
+    
+    .bio-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .bio-container img {
+        width: 175px;
+        height: auto;
+        border-radius: 10%;
+    }
+    
+    .text-busines {
+        text-align: left;
+    } 
+
+}
+
+/*---------------------laptops-and-other-computer----------------------------------*/
+
+@media (min-width: 992px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background-color: rgb(242, 242, 242);
+    }
+    
+    .container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(242, 242, 242);
+    }
+    
+    .logo-background {
+        width: 100%;
+        font-size: 3rem;
+        color: #333;
+        text-align: center;
+        display: block;
+        align-items: center;
+    
+    }
+    
+    
+    /*--------------------------------------Social-icons-----------------------------------*/
+    
+    .social-icons {
+        display:flex;
+        justify-content: right;
+        position: absolute;
+        top: 20px;
+        right: 5px;
+    }
+    
+    .social-icons a {
+        margin: 0 10px;
+        display: inline-block;
+    }
+    
+    .social-icons img {
+        width: 30px;
+        height: 30px;
+    }
+    
+    /*----------------------------------content------------------------------------------*/
+    
+    .calendario {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .evento {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    button {
+        padding: 10px 20px;
+        background-color: #0073e6;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+    }
+    
+    button:hover {
+        background-color: #005bb5;
+    }
+    
+    
+    
+    /*-----------------------------------bio entrepreneur--------------------------------------*/
+    
+    .category-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+        padding: 20px;
+    
+    
+    }
+    
+    .card {
+        border: 2px solid #333;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    
+    
+    .bio-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .bio-container img {
+        width: 200px;
+        height: auto;
+        border-radius: 10%;
+    }
+    
+    .text-busines {
+        text-align: left;
+    } 
+}
