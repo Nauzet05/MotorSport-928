@@ -1,19 +1,33 @@
-/*--------------Phone------------------*/
+/* Variables para colores */
+:root {
+    --background-color: #121212;
+    --highlight-color: #ff007f;
+    --button-color: #0073e6;
+    --button-hover-color: #005bb5;
+    --text-color: #ffffff;
+    --font-family: Arial, sans-serif;
+    --container-background: rgb(242, 242, 242);
+}
+
+/* Reset de márgenes y paddings */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+/* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     min-height: 100vh;
-    background-color: rgb(242, 242, 242);
 }
 
+/* Contenedor principal */
 .container {
     position: relative;
     width: 100%;
@@ -21,9 +35,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(242, 242, 242);
+    background-color: var(--container-background);
 }
 
+/* Logo */
 .logo-background {
     width: 100%;
     font-size: 3rem;
@@ -31,38 +46,76 @@ body {
     text-align: center;
     display: block;
     align-items: center;
-
 }
 
+/* Estilos de la cabecera */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: var(--background-color);
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+}
 
-/*--------------------------------------Social-icons-----------------------------------*/
+/* Logo */
+.logo h1 {
+    color: var(--text-color);
+    font-size: 2rem;
+    font-weight: bold;
+}
 
+.logo span {
+    color: var(--highlight-color);
+}
+
+/* Navegación */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; /* Asegura que los elementos de navegación se ajusten bien en pantallas pequeñas */
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover,
+nav ul li a:focus,
+nav ul li a.active {
+    color: var(--highlight-color);
+}
+
+/* Iconos sociales */
 .social-icons {
     position: absolute;
     top: 20px;
     right: 5px;
+    display: flex;
+    gap: 10px;
 }
 
-.social-icons a {
-    margin: 0 10px;
-    display: inline-block;
-}
-
-.social-icons img {
+.social-icons a img {
     width: 30px;
     height: 30px;
 }
 
-/*----------------------------------content-----------------------------------------*/
-
-.calendario {
+/* Estilos de los eventos del calendario */
+.calendar {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+    padding: 20px;
 }
 
-.evento {
-    background-color: #fff;
+.event {
+    background-color: #073e91;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
@@ -71,8 +124,8 @@ body {
 
 button {
     padding: 10px 20px;
-    background-color: #0073e6;
-    color: white;
+    background-color: var(--button-color);
+    color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -80,30 +133,10 @@ button {
 }
 
 button:hover {
-    background-color: #005bb5;
+    background-color: var(--button-hover-color);
 }
 
-
-
-/*---------------------------------bio-entrepreneur----------------------------------------*/
-
-.category-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
-    padding: 20px;
-
-
-}
-
-.card {
-    border: 2px solid #333;
-    padding: 20px;
-    text-align: center;
-}
-
-
-
+/* Estilos de la sección de biografía */
 .bio-container {
     display: flex;
     flex-direction: column;
@@ -120,262 +153,92 @@ button:hover {
 
 .text-busines {
     text-align: left;
-} 
+    padding: 20px;
+}
 
-/*---------------------Tablets----------------------------*/
+/* Consultas de medios */
 
-@media (min-width: 768px) { 
-
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    body {
-        font-family: Arial, sans-serif;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        background-color: rgb(242, 242, 242);
-    }
-    
-    .container {
-        position: relative;
-        width: 70%;
-        height: 70%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: rgb(242, 242, 242);
-    }
-    
+/* Para teléfonos (pantallas pequeñas) */
+@media (max-width: 767px) {
     .logo-background {
-        width: 100%;
-        font-size: 3rem;
-        color: #333;
-        text-align: center;
-        display: block;
-        align-items: center;
-    
+        font-size: 2rem;
     }
-    
-    
-    /*--------------------------------------Social-icons-----------------------------------*/
-    
+
+    header {
+        flex-direction: column; /* La cabecera se alinea verticalmente */
+        text-align: center; /* El texto se centra en pantallas pequeñas */
+    }
+
+    .logo h1 {
+        font-size: 1.8rem; /* Ajustar el tamaño de la fuente del logo */
+    }
+
+    nav ul {
+        flex-direction: column; /* Los elementos de navegación se apilan verticalmente */
+        gap: 10px;
+    }
+
+    .calendar {
+        grid-template-columns: 1fr;
+    }
+
     .social-icons {
-        position:absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+    button {
+        font-size: 0.9rem;
+    }
+}
+
+/* Para tabletas (pantallas medianas) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .container {
+        width: 90%;
+        height: auto;
+    }
+
+    header {
+        padding: 15px;
+    }
+
+    .calendar {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bio-container img {
+        width: 175px;
+    }
+
+    .social-icons {
         top: 20px;
         right: 20px;
     }
-    
-    .social-icons a {
-        margin:  10px;
-        display: inline-block;
-    }
-    
-    .social-icons img {
-        width: 30px;
-        height: 30px;
-    }
-    
-    /*----------------------------------content------------------------------------------*/
-    
-    .calendario {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-    
-    .evento {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 10px;
-        text-align: center;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    
-    button {
-        padding: 10px 20px;
-        background-color: #0073e6;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 1rem;
-    }
-    
-    button:hover {
-        background-color: #005bb5;
-    }
-    
-    
-    
-    /*-------------------------------bio entrepreneur------------------------------------*/
-    
-    .category-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 20px;
-        padding: 20px;
-    
-    
-    }
-    
-    .card {
-        border: 2px solid #333;
-        padding: 20px;
-        text-align: center;
-    }
-    
-    
-    
-    .bio-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 20px;
-    }
-    
-    .bio-container img {
-        width: 175px;
-        height: auto;
-        border-radius: 10%;
-    }
-    
-    .text-busines {
-        text-align: left;
-    } 
-
 }
 
-/*---------------------laptops-and-other-computer----------------------------------*/
-
+/* Para laptops y pantallas grandes (escritorio) */
 @media (min-width: 992px) {
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    body {
-        font-family: Arial, sans-serif;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        background-color: rgb(242, 242, 242);
-    }
-    
     .container {
-        position: relative;
         width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: rgb(242, 242, 242);
+        height: auto;
+        max-width: 1200px;
     }
-    
-    .logo-background {
-        width: 100%;
-        font-size: 3rem;
-        color: #333;
-        text-align: center;
-        display: block;
-        align-items: center;
-    
+
+    header {
+        padding: 20px;
     }
-    
-    
-    /*--------------------------------------Social-icons-----------------------------------*/
-    
+
+    .calendar {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
     .social-icons {
-        display:flex;
-        justify-content: right;
-        position: absolute;
         top: 20px;
-        right: 5px;
+        right: 20px;
     }
-    
-    .social-icons a {
-        margin: 0 10px;
-        display: inline-block;
-    }
-    
-    .social-icons img {
-        width: 30px;
-        height: 30px;
-    }
-    
-    /*----------------------------------content------------------------------------------*/
-    
-    .calendario {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-    }
-    
-    .evento {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 10px;
-        text-align: center;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    
-    button {
-        padding: 10px 20px;
-        background-color: #0073e6;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 1rem;
-    }
-    
-    button:hover {
-        background-color: #005bb5;
-    }
-    
-    
-    
-    /*-----------------------------------bio entrepreneur--------------------------------------*/
-    
-    .category-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 20px;
-        padding: 20px;
-    
-    
-    }
-    
-    .card {
-        border: 2px solid #333;
-        padding: 20px;
-        text-align: center;
-    }
-    
-    
-    
-    .bio-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 20px;
-    }
-    
+
     .bio-container img {
         width: 200px;
-        height: auto;
-        border-radius: 10%;
     }
-    
-    .text-busines {
-        text-align: left;
-    } 
 }
