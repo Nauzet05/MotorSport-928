@@ -1,0 +1,267 @@
+/*-------------------- Phones ------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f2f2f2;
+    color: #333;
+    padding: 10px;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f2f2f2;
+}
+
+/*---------------------------------- Logo ----------------------------------*/
+.logo-background {
+    width: 100%;
+    font-size: 2.5rem;
+    color: #2e3a59; /* Azul oscuro */
+    text-align: center;
+    display: block;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/*---------------------------------- Header -------------------------------*/
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #fafafa; /* Mantuve el color de fondo original */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+}
+
+.logo h1 {
+    color: #2e3a59; 
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/*---------------------------------- Social Icons -------------------------*/
+.social-icons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    display: inline-block;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+}
+
+/*----------------------------------- Button Home ------------------------*/
+.button-home {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    background-color: #007bff; /* Azul eléctrico */
+    color: #fff;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button-home:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/*----------------------------------- F1 Table --------------------------*/
+.f1-table {
+    width: 100%;
+    max-width: 1200px;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+
+    /* Animación inicial */
+    opacity: 0;
+    transform: translateY(20px); /* Desplazar hacia abajo */
+    transition: all 0.8s ease-out; /* Transición suave */
+}
+
+/* Mostrar las tablas cuando son visibles */
+.f1-table.visible {
+    opacity: 1;
+    transform: translateY(0); /* Regresar a su posición original */
+}
+
+
+.f1-table th, .f1-table td {
+    border: 1px solid #e0e0e0;
+    padding: 12px;
+    vertical-align: top;
+    background-color: #ffffff;
+}
+
+.f1-table th {
+    background-color: #2e3a59; /* Azul oscuro */
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+}
+
+.f1-table td {
+    font-size: 1em;
+    color: #333;
+}
+
+.f1-table td .highlight {
+    color: #00b894; /* Verde menta */
+    font-weight: bold;
+}
+
+/* Circuit Map */
+.circuit-map {
+    width: 100%;
+    height: auto;
+    max-width: 220px;
+    margin-top: 20px;
+}
+
+.flag {
+    width: 20px;
+    height: 12px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.link {
+    color: #007bff; /* Azul eléctrico */
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+/*-------------------- Tablets and Larger Screens -----------------------*/
+@media only screen and (min-width: 600px) {
+    .logo-background {
+        font-size: 2.8rem;
+    }
+
+    .button-home {
+        font-size: 1.2rem;
+    }
+
+    .social-icons {
+        top: 15px;
+        right: 15px;
+    }
+
+    .f1-table th, .f1-table td {
+        font-size: 1.1em;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .f1-table {
+        margin-top: 20px;
+        width: 90%;
+    }
+
+    .logo-background {
+        font-size: 3rem;
+    }
+
+    .button-home {
+        top: 15px;
+        left: 15px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .container {
+        width: 80%;
+    }
+
+    .logo-background {
+        font-size: 3.2rem;
+    }
+
+    .f1-table {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .button-home {
+        top: 20px;
+        left: 20px;
+    }
+}
+
+/*-------------------- Large Screens ------------------------*/
+@media only screen and (min-width: 1200px) {
+    body {
+        background-color: #f1f1f1;
+    }
+
+    .logo-background {
+        color: #2e3a59;
+    }
+
+    .f1-table th {
+        background-color: #1e2a3b;
+    }
+
+    .f1-table td .highlight {
+        color: #00b894;
+    }
+}
+
+/*----------------------------------- Mobile Focused ---------------------*/
+@media only screen and (max-width: 480px) {
+    .logo-background {
+        font-size: 1.8rem;
+    }
+
+    .button-home {
+        font-size: 1rem;
+        top: 5px;
+        left: 5px;
+    }
+
+    .social-icons {
+        top: 5px;
+        right: 5px;
+    }
+
+    .f1-table th, .f1-table td {
+        font-size: 0.9em;
+    }
+}
