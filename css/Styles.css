@@ -1,4 +1,4 @@
-/* Variables para colores */
+/* Variables for colors */
 :root {
     --background-color: #121212;
     --highlight-color: #ff007f;
@@ -9,14 +9,14 @@
     --container-background: rgb(242, 242, 242);
 }
 
-/* Reset de márgenes y paddings */
+/* Reset margins and paddings */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilos generales */
+/* General styles */
 body {
     font-family: var(--font-family);
     background-color: var(--background-color);
@@ -27,7 +27,7 @@ body {
     min-height: 100vh;
 }
 
-/* Contenedor principal */
+/* Main container */
 .container {
     position: relative;
     width: 100%;
@@ -48,14 +48,14 @@ body {
     align-items: center;
 }
 
-/* Estilos de la cabecera */
+/* Header styles */
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px;
     background-color: var(--background-color);
-    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+    flex-wrap: wrap; /* Allows elements to adjust on small screens */
 }
 
 /* Logo */
@@ -69,12 +69,12 @@ header {
     color: var(--highlight-color);
 }
 
-/* Navegación */
+/* Navigation */
 nav ul {
     list-style: none;
     display: flex;
     gap: 20px;
-    flex-wrap: wrap; /* Asegura que los elementos de navegación se ajusten bien en pantallas pequeñas */
+    flex-wrap: wrap; /* Ensures navigation items adjust well on small screens */
 }
 
 nav ul li {
@@ -93,7 +93,7 @@ nav ul li a.active {
     color: var(--highlight-color);
 }
 
-/* Iconos sociales */
+/* Social icons */
 .social-icons {
     position: absolute;
     top: 20px;
@@ -107,7 +107,7 @@ nav ul li a.active {
     height: 30px;
 }
 
-/* Estilos de los eventos del calendario */
+/* Calendar event styles */
 .calendar {
     display: grid;
     gap: 20px;
@@ -136,7 +136,7 @@ button:hover {
     background-color: var(--button-hover-color);
 }
 
-/* Estilos de la sección de biografía */
+/* Biography section styles */
 .bio-container {
     display: flex;
     flex-direction: column;
@@ -156,25 +156,25 @@ button:hover {
     padding: 20px;
 }
 
-/* Consultas de medios */
+/* Media queries */
 
-/* Para teléfonos (pantallas pequeñas) */
+/* For phones (small screens) */
 @media (max-width: 767px) {
     .logo-background {
         font-size: 2rem;
     }
 
     header {
-        flex-direction: column; /* La cabecera se alinea verticalmente */
-        text-align: center; /* El texto se centra en pantallas pequeñas */
+        flex-direction: column; /* Header aligns vertically */
+        text-align: center; /* Text centers on small screens */
     }
 
     .logo h1 {
-        font-size: 1.8rem; /* Ajustar el tamaño de la fuente del logo */
+        font-size: 1.8rem; /* Adjust logo font size */
     }
 
     nav ul {
-        flex-direction: column; /* Los elementos de navegación se apilan verticalmente */
+        flex-direction: column; /* Navigation items stack vertically */
         gap: 10px;
     }
 
@@ -192,7 +192,7 @@ button:hover {
     }
 }
 
-/* Para tabletas (pantallas medianas) */
+/* For tablets (medium screens) */
 @media (min-width: 768px) and (max-width: 991px) {
     .container {
         width: 90%;
@@ -217,7 +217,7 @@ button:hover {
     }
 }
 
-/* Para laptops y pantallas grandes (escritorio) */
+/* For laptops and large screens (desktop) */
 @media (min-width: 992px) {
     .container {
         width: 100%;

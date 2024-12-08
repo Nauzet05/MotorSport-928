@@ -1,10 +1,11 @@
+/*-------------------- Global Styles --------------------*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Logo */
+/*-------------------- Logo Styles --------------------*/
 .logo h1 {
     color: var(--text-color);
     font-size: 2rem;
@@ -15,12 +16,12 @@
     color: var(--highlight-color);
 }
 
-/* Navegación */
+/*-------------------- Navigation Styles --------------------*/
 nav ul {
     list-style: none;
     display: flex;
     gap: 20px;
-    flex-wrap: wrap; /* Asegura que los elementos de navegación se ajusten bien en pantallas pequeñas */
+    flex-wrap: wrap; /* Ensure good adjustment on smaller screens */
 }
 
 nav ul li {
@@ -39,12 +40,14 @@ nav ul li a.active {
     color: var(--highlight-color);
 }
 
+/*-------------------- Body and General Settings --------------------*/
 body {
     background-color: #111;
     color: white;
     font-family: Arial, sans-serif;
 }
 
+/*-------------------- Gallery Styles --------------------*/
 .gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -64,12 +67,15 @@ body {
     transform: scale(1.05);
 }
 
+/*-------------------- Media Queries --------------------*/
+/* For Tablets */
 @media screen and (max-width: 768px) {
     .gallery {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
+/* For Phones */
 @media screen and (max-width: 480px) {
     .gallery {
         grid-template-columns: 1fr;

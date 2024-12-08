@@ -1,12 +1,12 @@
-// Función para cargar los comentarios desde localStorage y mostrarlos
+// Function to load comments from localStorage and display them
 function loadComments() {
     const commentsList = document.getElementById('comments-list');
-    commentsList.innerHTML = '';  // Limpiar la lista antes de cargar los comentarios
+    commentsList.innerHTML = '';  // Clear the list before loading comments
 
-    // Verificar si ya hay comentarios en localStorage
+    // Check if there are comments in localStorage
     const savedComments = JSON.parse(localStorage.getItem('comments')) || [];
 
-    // Mostrar los comentarios guardados
+    // Display the saved comments
     savedComments.forEach((comment, index) => {
         const li = document.createElement('li');
         li.innerHTML = `
@@ -19,68 +19,67 @@ function loadComments() {
     });
 }
 
-// Función para manejar el envío del formulario
+// Function to handle form submission
 function handleFormSubmit(e) {
-    e.preventDefault();  // Evitar que el formulario se envíe de la manera tradicional
+    e.preventDefault();  // Prevent the form from being submitted traditionally
 
     const username = document.getElementById('username').value;
     const comment = document.getElementById('comment').value;
 
     if (username && comment) {
-        // Crear un nuevo comentario
+        // Create a new comment
         const newComment = {
             username,
             comment
         };
 
-        // Obtener los comentarios guardados en localStorage, si existen
+        // Retrieve saved comments from localStorage, if any
         const savedComments = JSON.parse(localStorage.getItem('comments')) || [];
 
-        // Agregar el nuevo comentario a la lista
+        // Add the new comment to the list
         savedComments.push(newComment);
 
-        // Guardar la lista de comentarios actualizada en localStorage
+        // Save the updated comment list to localStorage
         localStorage.setItem('comments', JSON.stringify(savedComments));
 
-        // Limpiar el formulario
+        // Clear the form
         document.getElementById('username').value = '';
         document.getElementById('comment').value = '';
 
-        // Recargar los comentarios para mostrar el nuevo
+        // Reload comments to show the new one
         loadComments();
     }
 }
 
-// Función para editar un comentario
+// Function to edit a comment
 function editComment(index) {
     const savedComments = JSON.parse(localStorage.getItem('comments')) || [];
     const comment = savedComments[index];
 
-    // Rellenar el formulario con el comentario a editar
+    // Populate the form with the comment to be edited
     document.getElementById('username').value = comment.username;
     document.getElementById('comment').value = comment.comment;
 
-    // Eliminar el comentario para reemplazarlo después de editar
+    // Delete the comment to replace it after editing
     deleteComment(index);
 }
 
-// Función para eliminar un comentario
+// Function to delete a comment
 function deleteComment(index) {
     const savedComments = JSON.parse(localStorage.getItem('comments')) || [];
 
-    // Eliminar el comentario de la lista
+    // Remove the comment from the list
     savedComments.splice(index, 1);
 
-    // Guardar la lista actualizada en localStorage
+    // Save the updated list to localStorage
     localStorage.setItem('comments', JSON.stringify(savedComments));
 
-    // Recargar los comentarios
+    // Reload comments
     loadComments();
 }
 
-// Evento para cargar los comentarios al cargar la página
+// Event to load comments when the page is loaded
 document.addEventListener('DOMContentLoaded', loadComments);
 
-// Evento para enviar el formulario
+// Event to handle form submission
 document.getElementById('comment-form').addEventListener('submit', handleFormSubmit);
-

@@ -1,4 +1,4 @@
-/* Resetear márgenes y rellenos predeterminados */
+/* Reset default margins and padding */
 * {
     margin: 0;
     padding: 0;
@@ -21,7 +21,7 @@
 .logo-background {
     width: 100%;
     font-size: 2.5rem;
-    color: #2e3a59; /* Azul oscuro */
+    color: #2e3a59; /* Dark blue */
     text-align: center;
     display: block;
     align-items: center;
@@ -34,19 +34,18 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 20px;
-    background-color: #fafafa; /* Mantuve el color de fondo original */
-    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+    background-color: #fafafa; /* Retained the original background color */
+    flex-wrap: wrap; /* Ensures elements adjust on small screens */
 }
 
 .logo h1 {
-    color: #2e3a59; 
+    color: #2e3a59;
     font-size: 2rem;
     font-weight: bold;
 }
 /*---------------------------------------------------------------------------*/
 
-
-/* Estilo global del cuerpo */
+/* Global body style */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
@@ -55,7 +54,7 @@ body {
     line-height: 1.6;
 }
 
-/* Título */
+/* Title */
 h1 {
     text-align: center;
     margin-bottom: 30px;
@@ -64,17 +63,17 @@ h1 {
     font-weight: bold;
 }
 
-/* Contenedor principal del calendario */
+/* Main calendar container */
 .calendar-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    border-radius: 20px; /* Bordes redondeados para el contenedor principal */
+    border-radius: 20px; /* Rounded borders for the main container */
     background-color: #ffffff;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo para el calendario (todos los meses) */
+/* Calendar style (all months) */
 .calendar {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -82,16 +81,16 @@ h1 {
     padding: 20px;
 }
 
-/* Estilo para cada mes */
+/* Style for each month */
 .month {
     background-color: #ffffff;
-    border-radius: 15px; /* Bordes redondeados */
+    border-radius: 15px; /* Rounded borders */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     padding: 20px;
     transition: transform 0.3s ease;
 }
 
-/* Título de los meses */
+/* Month titles */
 .month h2 {
     font-size: 24px;
     font-weight: bold;
@@ -100,35 +99,35 @@ h1 {
     text-align: center;
 }
 
-/* Estilo para las tarjetas de los rallys */
+/* Style for rally cards */
 .rally-card {
     background-color: #3498db;
     color: white;
     padding: 15px;
-    border-radius: 10px; /* Bordes más redondeados para las tarjetas */
+    border-radius: 10px; /* More rounded borders for the cards */
     margin-bottom: 15px;
     transition: transform 0.3s ease;
     cursor: pointer;
 }
 
-/* Efecto hover para las tarjetas */
+/* Hover effect for cards */
 .rally-card:hover {
     transform: translateY(-5px);
 }
 
-/* Estilo para la fecha del rally */
+/* Style for rally date */
 .rally-date {
     font-size: 18px;
     font-weight: bold;
 }
 
-/* Estilo para el nombre del rally */
+/* Style for rally name */
 .rally-name {
     font-size: 16px;
     font-weight: 500;
 }
 
-/* Añadir algunos ajustes para hacer la página más responsiva */
+/* Add some adjustments to make the page more responsive */
 @media (max-width: 768px) {
     .calendar {
         grid-template-columns: 1fr 1fr;
