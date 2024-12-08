@@ -7,9 +7,14 @@ function loadComments() {
     const savedComments = JSON.parse(localStorage.getItem('comments')) || [];
 
     // Mostrar los comentarios guardados
-    savedComments.forEach(comment => {
+    savedComments.forEach((comment, index) => {
         const li = document.createElement('li');
-        li.innerHTML = `<strong>${comment.username}</strong>: ${comment.comment}`;
+        li.innerHTML = `
+            <strong>${comment.username}</strong>: 
+            <span class="comment-text">${comment.comment}</span> 
+            <button onclick="editComment(${index})">Editar</button>
+            <button onclick="deleteComment(${index})">Eliminar</button>
+        `;
         commentsList.appendChild(li);
     });
 }
@@ -46,8 +51,36 @@ function handleFormSubmit(e) {
     }
 }
 
+// Función para editar un comentario
+function editComment(index) {
+    const savedComments = JSON.parse(localStorage.getItem('comments')) || [];
+    const comment = savedComments[index];
+
+    // Rellenar el formulario con el comentario a editar
+    document.getElementById('username').value = comment.username;
+    document.getElementById('comment').value = comment.comment;
+
+    // Eliminar el comentario para reemplazarlo después de editar
+    deleteComment(index);
+}
+
+// Función para eliminar un comentario
+function deleteComment(index) {
+    const savedComments = JSON.parse(localStorage.getItem('comments')) || [];
+
+    // Eliminar el comentario de la lista
+    savedComments.splice(index, 1);
+
+    // Guardar la lista actualizada en localStorage
+    localStorage.setItem('comments', JSON.stringify(savedComments));
+
+    // Recargar los comentarios
+    loadComments();
+}
+
 // Evento para cargar los comentarios al cargar la página
 document.addEventListener('DOMContentLoaded', loadComments);
 
 // Evento para enviar el formulario
 document.getElementById('comment-form').addEventListener('submit', handleFormSubmit);
+

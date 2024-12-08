@@ -1,6 +1,6 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
+  font-family: 'Poppins', sans-serif; /* Fuente moderna */
+  background-color: #eef2f3; /* Un tono claro y relajante */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,70 +9,85 @@ body {
 }
 
 .register-container {
-  background-color: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff; /* Fondo limpio */
+  padding: 40px; /* Más espacio para respirar */
+  border-radius: 12px; /* Bordes ligeramente más redondeados */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
   width: 100%;
-  max-width: 400px;
+  max-width: 380px;
   text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.register-container:hover {
+  transform: translateY(-5px); /* Efecto de elevación al pasar el ratón */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 h2 {
-  color: #333;
-  margin-bottom: 20px;
+  color: #333333;
+  font-size: 24px;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   text-align: left;
 }
 
 label {
   display: block;
   font-size: 14px;
-  color: #555;
-  margin-bottom: 5px;
+  color: #666666;
+  margin-bottom: 8px;
+  font-weight: 500;
 }
 
 input {
   width: 100%;
-  padding: 10px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  padding: 12px;
+  font-size: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
   box-sizing: border-box;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
 input:focus {
   border-color: #007BFF;
+  background-color: #ffffff;
   outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-#error-name {
+#error-name, #error-surname, #error-email, #error-date {
   visibility: hidden;
+  font-size: 12px;
+  color: #e63946; /* Rojo elegante */
+  margin-top: 5px;
 }
-
-#error-surname {
-  visibility: hidden;
-}
-
-#error-email {
-  visibility: hidden;
-}
-
 
 .submit-btn {
   background-color: #007BFF;
-  color: white;
-  padding: 10px 15px;
+  color: #ffffff;
+  padding: 12px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
   width: 100%;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .submit-btn:hover {
   background-color: #0056b3;
+  box-shadow: 0 4px 15px rgba(0, 91, 187, 0.3);
+}
+
+.submit-btn:active {
+  background-color: #003d80;
 }

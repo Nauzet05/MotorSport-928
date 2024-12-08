@@ -7,6 +7,8 @@ function showData(){
   
     const EMAIL = localStorage.getItem("email");
     document.getElementById("email").innerHTML = EMAIL;
+
+    const DATE = localStorage.getItem("date");
+    document.getElementById("date").innerHTML = DATE;
   }
-  
   showData();

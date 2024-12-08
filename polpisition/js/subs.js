@@ -9,6 +9,7 @@ function validatePersonalDataForm(e) {
   const NAME = e.target.name.value;
   const SURNAME = e.target.surname.value;
   const EMAIL = e.target.email.value;
+  const DATE = e.target.date.value;
 
   let valid = true;
 
@@ -28,12 +29,15 @@ function validatePersonalDataForm(e) {
     valid = false;
   } else document.getElementById("error-email").style.visibility = "hidden";
 
-
+  if (!DATE) {
+    document.getElementById("error-date").style.visibility = "visible";
+    valid = false;
+  } else document.getElementById("error-date").style.visibility = "hidden";
 
   if (!valid) {
     e.preventDefault();
   } else {
-    saveData(NAME, SURNAME, EMAIL);
+    saveData(NAME, SURNAME, EMAIL, DATE);
   }
 }
 
@@ -41,6 +45,7 @@ function saveData(name, surname, email) {
   localStorage.setItem("name", name);
   localStorage.setItem("surname", surname);
   localStorage.setItem("email", email);
+  localStorage.setItem("date", date);
   console.log("validation 13.0");
 
 }

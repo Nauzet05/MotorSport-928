@@ -102,7 +102,19 @@ header {
     background-color: #ffffff;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
+
+    /* Animación inicial */
+    opacity: 0;
+    transform: translateY(20px); /* Desplazar hacia abajo */
+    transition: all 0.8s ease-out; /* Transición suave */
 }
+
+/* Mostrar las tablas cuando son visibles */
+.f1-table.visible {
+    opacity: 1;
+    transform: translateY(0); /* Regresar a su posición original */
+}
+
 
 .f1-table th, .f1-table td {
     border: 1px solid #e0e0e0;
