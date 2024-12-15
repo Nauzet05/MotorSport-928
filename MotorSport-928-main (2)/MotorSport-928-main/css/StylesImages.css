@@ -1,0 +1,83 @@
+/*-------------------- Global Styles --------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*-------------------- Logo Styles --------------------*/
+.logo h1 {
+    color: var(--text-color);
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--highlight-color);
+}
+
+/*-------------------- Navigation Styles --------------------*/
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; /* Ensure good adjustment on smaller screens */
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover,
+nav ul li a:focus,
+nav ul li a.active {
+    color: var(--highlight-color);
+}
+
+/*-------------------- Body and General Settings --------------------*/
+body {
+    background-color: #111;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/*-------------------- Gallery Styles --------------------*/
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 20px;
+}
+
+.photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.photo img:hover {
+    transform: scale(1.05);
+}
+
+/*-------------------- Media Queries --------------------*/
+/* For Tablets */
+@media screen and (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* For Phones */
+@media screen and (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}
